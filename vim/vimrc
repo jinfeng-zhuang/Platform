@@ -1,0 +1,35 @@
+" shiftwidth can be used for block indent
+" not use expandtab to make it easy to debug
+" not use c format indent beacause I want to keep the usage simple
+" follow the code style
+
+colorscheme desert
+
+"set nu
+
+set autoindent "keep indent as upper line
+
+autocmd FileType h,c,cpp set expandtab | set tabstop=4 | set shiftwidth=4 " only h,c,cpp
+"autocmd FileType h,c,cpp set tabstop=4 | set shiftwidth=4 " only h,c,cpp
+
+set incsearch
+set hlsearch
+
+if filereadable("cscope.out")
+cs add cscope.out
+endif
+
+autocmd FileType h,c,cpp let Tlist_Auto_Open = 1
+autocmd FileType h,c,cpp let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+autocmd FileType h,c,cpp let Tlist_Show_One_File = 1
+autocmd FileType h,c,cpp let Tlist_Exit_OnlyWindow = 1
+
+set cursorcolumn
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=grey ctermfg=black guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=grey ctermfg=black guibg=NONE guifg=NONE
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+

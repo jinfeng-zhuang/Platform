@@ -1,0 +1,5 @@
+create user 'z'@'%' identified by 'wosiguwozai';
+grant all on *.* to 'z'@'%';
+create table person (id int not null auto_increment, name varchar(8), primary key(id));
+desc person;
+insert into person (name) values ('z');
