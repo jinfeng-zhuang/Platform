@@ -1,0 +1,11 @@
+.vs/
+OpenCV/
+Debug/
+Release/
+
+*.ncb
+*.manifest
+*.db
+*.opendb
+*.filters
+*.user
